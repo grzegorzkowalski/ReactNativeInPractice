@@ -1,4 +1,4 @@
-# Szkolenie techniki tworzenia aplikacji mobilnych w React
+# Szkolenie React Native w praktyce
 
 1. Rozdział 2 - Hello World
 2. Rozdział 3 - Dubugowanie aplikacji
