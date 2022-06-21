@@ -1,0 +1,114 @@
+{
+    "questions": [
+        {
+            "questionNumber": 1,
+            "question": "Ile metrów wysokości ma wieża Eiffle?",
+            "answers": {
+                "a": 222,
+                "b": 120,
+                "c": 300,
+                "d": 333
+            },
+            "goodAnswer": 300
+        },
+        {
+            "questionNumber": 2,
+            "question": "Jaki jest najcięższy ssak na świecie?",
+            "answers": {
+                "a": "Płetwal Błekitny",
+                "b": "Słoń",
+                "c": "Nosorożec",
+                "d": "Hipopotam"
+            },
+            "goodAnswer": "Płetwal Błekitny"
+        },
+                {
+            "questionNumber": 3,
+            "question": "Ile metrów wysokości ma wieża Eiffle?",
+            "answers": {
+                "a": 222,
+                "b": 120,
+                "c": 300,
+                "d": 333
+            },
+            "goodAnswer": 300
+        },
+        {
+            "questionNumber": 4,
+            "question": "Jaki jest najcięższy ssak na świecie?",
+            "answers": {
+                "a": "Płetwal Błekitny",
+                "b": "Słoń",
+                "c": "Nosorożec",
+                "d": "Hipopotam"
+            },
+            "goodAnswer": "Płetwal Błekitny"
+        },
+		        {
+            "questionNumber": 5,
+            "question": "Ile metrów wysokości ma wieża Eiffle?",
+            "answers": {
+                "a": 222,
+                "b": 120,
+                "c": 300,
+                "d": 333
+            },
+            "goodAnswer": 300
+        },
+        {
+            "questionNumber": 6,
+            "question": "Jaki jest najcięższy ssak na świecie?",
+            "answers": {
+                "a": "Płetwal Błekitny",
+                "b": "Słoń",
+                "c": "Nosorożec",
+                "d": "Hipopotam"
+            },
+            "goodAnswer": "Płetwal Błekitny"
+        },
+		        {
+            "questionNumber": 7,
+            "question": "Ile metrów wysokości ma wieża Eiffle?",
+            "answers": {
+                "a": 222,
+                "b": 120,
+                "c": 300,
+                "d": 333
+            },
+            "goodAnswer": 300
+        },
+        {
+            "questionNumber": 8,
+            "question": "Jaki jest najcięższy ssak na świecie?",
+            "answers": {
+                "a": "Płetwal Błekitny",
+                "b": "Słoń",
+                "c": "Nosorożec",
+                "d": "Hipopotam"
+            },
+            "goodAnswer": "Płetwal Błekitny"
+        },
+		        {
+            "questionNumber": 9,
+            "question": "Ile metrów wysokości ma wieża Eiffle?",
+            "answers": {
+                "a": 222,
+                "b": 120,
+                "c": 300,
+                "d": 333
+            },
+            "goodAnswer": 300
+        },
+        {
+            "questionNumber": 10,
+            "question": "Jaki jest najcięższy ssak na świecie?",
+            "answers": {
+                "a": "Płetwal Błekitny",
+                "b": "Słoń",
+                "c": "Nosorożec",
+                "d": "Hipopotam"
+            },
+            "goodAnswer": "Płetwal Błekitny"
+        }
+    ]
+}

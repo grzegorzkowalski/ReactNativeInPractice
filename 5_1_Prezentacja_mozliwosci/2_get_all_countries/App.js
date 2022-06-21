@@ -88,24 +88,24 @@ export default function App() {
   );
 
   return (
-      <SafeAreaView style={styles.container}>
-        <View style={styles.topBar}></View>
-        <StatusBar />
-        {!countries.length ? (
-            <View style={styles.container}>
-              <ActivityIndicator />
-            </View>
-        ) : (
-            <FlatList
-                style={{ flex: 1, width: "100%" }}
-                data={countries}
-                renderItem={renderItem}
-                keyExtractor={(item) => item.alpha2Code}
-            />
-        )}
-      </SafeAreaView>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.topBar} />
+      <StatusBar />
+      {!countries.length ? (
+        <View style={styles.container}>
+          <ActivityIndicator />
+        </View>
+      ) : (
+        <FlatList
+          style={{ flex: 1, width: "100%" }}
+          data={countries}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.alpha2Code}
+        />
+      )}
+    </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
