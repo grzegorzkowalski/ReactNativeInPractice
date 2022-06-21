@@ -1,14 +1,17 @@
 import React, {useEffect, useState} from 'react';
 import {Button, StyleSheet, View, Text} from 'react-native';
-import Timer from "./Zadanie8/Timer";
 import Name from "./Zadanie1/Name";
 import Surname from "./Zadanie1/Surname";
+import SquareBox from "./zadanie2/SquareBox";
 import Calendar from "./Zadanie3/Calendar";
+import Map from "./Zadanie4/Map";
+import Grid from "./Zadanie5/Grid";
 import Pizza from "./Zadanie6/Pizza";
 import Invitation from "./Zadanie7/Invitation";
+import DataTimer from "./Zadanie8/Timer";
 
 export default function App() {
-    const [time, setTime] = useState(new Date().toLocaleTimeString());
+    const [time, setTime] = useState("Test");
     const [randonNumber, setRandomNumber] = useState(0);
     const inviteData = {
         place: "domowka",
@@ -29,15 +32,15 @@ export default function App() {
    }, []);
     return (
         <View style={styles.container}>
-            {/*<Name />*/}
-            {/*<Surname />*/}
-            {/*<Calendar/>*/}
-            {/*<Map url={"https://bliskopolski.pl/pliki/mapa-polski-1701.png"}/>*/}
-            {/*<SquareBox/>*/}
-            {/*<Grid/>*/}
-            {/*<Pizza/>*/}
-            {/*<Invitation inviteData={inviteData}/>*/}
-            <Timer time={time}/>
+            <Name />
+            <Surname />
+            <Calendar />
+            <Map url={"https://bliskopolski.pl/pliki/mapa-polski-1701.png"}/>
+            <SquareBox/>
+            <Grid/>
+            <Pizza/>
+            <Invitation inviteData={inviteData} />
+            <DataTimer time={time}/>
             <Text>{randonNumber}</Text>
             <Button
                 title="Losuj"

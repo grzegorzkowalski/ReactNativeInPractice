@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text} from "react-native";
 
-const Timer = ({time}) => {
+const DataTimer = ({time}) => {
     return (
         <Text>
             {time}
@@ -9,4 +9,4 @@ const Timer = ({time}) => {
     );
 };
 
-export default Timer;
+export default DataTimer;

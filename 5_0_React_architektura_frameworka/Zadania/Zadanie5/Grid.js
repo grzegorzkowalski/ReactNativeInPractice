@@ -15,7 +15,7 @@ const Grid = () => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        height: 500,
         alignItems: "center",
         justifyContent: "center"
     },
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     },
     innerInnerContainer: {
         width: "40%",
-        height: 300,
+        height: 150,
         backgroundColor: "yellow"
     }
 })
