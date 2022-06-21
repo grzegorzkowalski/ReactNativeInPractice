@@ -7,8 +7,6 @@
 - AboutUs
 - Contact
 - WhatWeDo
-4. Nawigacja zamiast tytułów powinna zawierać w tabach ikonki. 
-5. Spędź chwilę żeby poprawić style twojej aplikacji
-6. Spróbuj zmodyfikować ekran `Contact` tak by zawierał w sobie osobny StackNavigator z opcją modal. Co zauważyłeś? Jak różni się w tym kontekście użycie stack navigatora z opcją modal i card. 
-
+4. Nawigacja zamiast tytułów powinna zawierać w tabach ikonki.
+5. Spędź chwilę żeby poprawić style twojej aplikacji.
 
