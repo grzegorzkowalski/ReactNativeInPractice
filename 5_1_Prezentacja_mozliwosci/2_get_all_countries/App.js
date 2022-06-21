@@ -9,7 +9,8 @@ import {
   ActivityIndicator,
   SafeAreaView,
 } from "react-native";
-import capitalLangLong from "./data/capitalLangLong";
+import capitalLangLong from "./data/capitalLangLong.js";
+import data from "./data/countries.json"
 
 // const API_Key = "wstaw tu swój klucz API";
 const API_Key = "632b95e80b7ceba4c48c0a574ef5acf4";
@@ -43,16 +44,21 @@ export default function App() {
   }
 
   useEffect(() => {
-    (async () => {
-      try {
-        const request = await fetch(API_URL);
-        const data = await request.json();
-        setCountries(data);
-        console.log(data);
-      } catch (error) {
-        console.error(error);
+    fetch("./data/countries.json")
+    .then(response => {
+      const contentType = response.headers.get("content-type");
+      console.log(contentType);
+      if (contentType && contentType.indexOf("application/json") !== -1) {
+        return response.json().then(data => {
+          console.log(data);
+        });
+      } else {
+        return response.text().then(text => {
+          console.log(data);
+          setCountries(data);
+        });
       }
-    })();
+    })
   }, []);
 
   const renderItem = ({ item }) => (
@@ -66,7 +72,7 @@ export default function App() {
         <Text>Nazwa w języku kraju</Text>
         <View>
           {
-            item.altSpellings.map(el => <Text>{el}</Text>)
+            item.altSpellings.map(el => <Text key={el}>{el}</Text>)
           }
         </View>
         <Text>
