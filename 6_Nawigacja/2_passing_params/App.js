@@ -24,7 +24,11 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home" mode={"modal"}>
         <Stack.Screen name="Home" component={Authors} />
-        <Stack.Screen name="Author" component={Author} />
+        <Stack.Screen
+            name="Author"
+            component={Author}
+            options={({ route }) => ({ title: route.params.name })}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

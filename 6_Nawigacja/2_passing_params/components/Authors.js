@@ -29,8 +29,8 @@ export default function App({navigation, route}) {
 
   const renderItem = ({ item }) => (
     <View style={styles.item}>
-      
       <Text style={styles.title}>{item.name}</Text>
+      <Button title="Szczegóły" onPress={() => navigation.navigate("Author", {author: item.name, name: item.name})} />
     </View>
   );
 
