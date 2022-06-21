@@ -42,7 +42,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.topBar}></View>
+      <View style={styles.topBar} />
       <StatusBar />
       {!countries.length ? (
         <View style={styles.container}>
@@ -58,7 +58,7 @@ export default function App() {
       )}
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
