@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import ThemeContext from "../../context/ThemeContext";
 
 import {StyleSheet, Text, View, Button} from 'react-native';
 
 const HomeScreen = ({navigation}) => {
+    const {updateContext} = useContext(ThemeContext);
     return (
         <View style={styles.container}>
           <Text>Home</Text>
           <Button title="About Us" onPress={() => navigation.navigate('About')} />
+          <Button
+              title="Update Context"
+              onPress={() => updateContext({
+                  headerStyle: 'red',
+                  headerTintColor: 'black'
+              })}
+          />
         </View>
-    );
+    )
 };
 
 const styles = StyleSheet.create({

@@ -1,12 +1,25 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import { Button, Text, View } from 'react-native';
+import ThemeContext from "../../context/ThemeContext";
 
-import {Text, View} from 'react-native';
 
 const AboutUsScreen = ({}) => {
+    const {style, updateContext} = useContext(ThemeContext);
     return (
-        <Text>
-            AboutUsScreen
-        </Text>
+        <View>
+            <Text>
+                AboutUsScreen
+            </Text>
+            <Button
+                title="Update Context"
+                onPress={() => updateContext({
+                    headerStyle: 'yellow',
+                    headerTintColor: 'green'
+                })}
+            />
+
+        </View>
+
     );
 };
 

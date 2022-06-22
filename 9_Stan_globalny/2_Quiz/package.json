@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-navigation/native": "^6.0.6",
     "@react-navigation/native-stack": "^6.2.5",
+    "@reduxjs/toolkit": "^1.8.2",
     "expo": "~43.0.2",
     "expo-status-bar": "~1.1.0",
     "lodash": "^4.17.21",
@@ -21,7 +22,10 @@
     "react-native-paper": "^4.11.1",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.10.1",
-    "react-native-web": "0.17.1"
+    "react-native-web": "0.17.1",
+    "react-redux": "^8.0.2",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-logger": "^3.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
