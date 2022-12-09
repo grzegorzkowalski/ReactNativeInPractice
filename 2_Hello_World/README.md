@@ -2,7 +2,7 @@
 
 ## Zadanie 1
 
-1. Zainstaluj `Expo CLI`. `npm i -g expo-cli`.
+1. Zainstaluj `Expo CLI`. `npm i -g expo-cli`. 
 1. Pobierz aplikację Expo ze sklepu Google Play lub AppStore.
 1. Stwórz nową aplikację Expo w folderze `2_Hello_World` `npx create-expo-app hello-world`. 
 1. Przejdź do folderu z zainstalowaną aplikacją `cd hello-world`. 
