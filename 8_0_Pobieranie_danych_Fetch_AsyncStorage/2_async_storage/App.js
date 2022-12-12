@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View, TextInput, Button } from "react-native";
 
 export default function App() {
-  const answears = ["papier", "nożyce", "kamień"];
+  const answers = ["papier", "nożyce", "kamień"];
   const [name, setName] = useState("No name"); //Dodaj stan początkowy na podstawie AsyncStorage
   const [gameHistory, setGameHistory] = useState([]); //Dodaj stan początkowy na podstawie AsyncStorage
   const [whoWon, setWhoWon] = useState('');
