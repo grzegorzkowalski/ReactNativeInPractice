@@ -1,12 +1,13 @@
 import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet, Pressable } from "react-native";
 
 export default function WelcomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.welcome}>Witaj w grze</Text>
-    /* TODO: Napisz swój kod tutaj */
-      <Text style={styles.instructions}>Zaczynamy</Text>
+      <Pressable onPress={() => navigation.navigate('Game')}>
+          <Text style={styles.instructions}>Zaczynamy</Text>
+      </Pressable>
     </View>
   );
 }

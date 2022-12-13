@@ -9,13 +9,37 @@ import {
   ActivityIndicator,
   SafeAreaView,
 } from "react-native";
+import capitalLangLong from "./data/capitalLangLong.js";
 
-const API_Key = "wstaw tu swój klucz API";
+const API_Key = "632b95e80b7ceba4c48c0a574ef5acf4";
 
 const API_URL = `http://api.countrylayer.com/v2/all?access_key=${API_Key}`;
 
 export default function App() {
   const [countries, setCountries] = useState([]);
+
+  function findIndex(capital) {
+    return capitalLangLong.findIndex((el) => el.CapitalName === capital);
+  }
+  function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
+    console.log(lat1,lon1,lat2,lon2)
+    var R = 6371; // Radius of the earth in km
+    var dLat = deg2rad(lat2-lat1);  // deg2rad below
+    var dLon = deg2rad(lon2-lon1);
+    var a =
+        Math.sin(dLat/2) * Math.sin(dLat/2) +
+        Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
+        Math.sin(dLon/2) * Math.sin(dLon/2)
+    ;
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    var d = R * c; // Distance in km
+    return d;
+  }
+
+  function deg2rad(deg) {
+    return deg * (Math.PI/180)
+  }
+
 
   useEffect(() => {
     (async () => {
@@ -30,6 +54,25 @@ export default function App() {
     })();
   }, []);
 
+  // Gdy skończy się API
+  // useEffect(() => {
+  //   fetch("./data/countries.json")
+  //       .then(response => {
+  //         const contentType = response.headers.get("content-type");
+  //         console.log(contentType);
+  //         if (contentType && contentType.indexOf("application/json") !== -1) {
+  //           return response.json().then(data => {
+  //             console.log(data);
+  //           });
+  //         } else {
+  //           return response.text().then(text => {
+  //             console.log(data);
+  //             setCountries(data);
+  //           });
+  //         }
+  //       })
+  // }, []);
+
   const renderItem = ({ item }) => (
     <View style={styles.item}>
       <Text style={styles.title}>{item.name}</Text>
@@ -38,6 +81,32 @@ export default function App() {
           style={{width: 45, height:30}}
       />
     </View>
+  );
+
+  const renderItem2 = ({ item }) => (
+      <View style={styles.item}>
+        <Text style={styles.title}>{item.name}</Text>
+        <Text style={styles.title}>{item.capital}</Text>
+        <Image
+            source={`https://www.worldometers.info/img/flags/${(item.alpha2Code).toLowerCase()}-flag.gif`}
+            style={{width: 45, height:30}}
+        />
+        <Text>Nazwa w języku kraju</Text>
+        <View>
+          {
+            item.altSpellings.map(el => <Text key={el}>{el}</Text>)
+          }
+        </View>
+        <Text>
+          Odległość z Warszawy do {item.capital}:
+          {getDistanceFromLatLonInKm(
+            52.242526379634235,
+            21.068054831680122,
+            capitalLangLong[findIndex(item.capital)]?.CapitalLatitude,
+            capitalLangLong[findIndex(item.capital)]?.CapitalLongitude
+          )}
+        </Text>
+      </View>
   );
 
   return (
@@ -52,7 +121,7 @@ export default function App() {
         <FlatList
           style={{ flex: 1, width: "100%" }}
           data={countries}
-          renderItem={renderItem}
+          renderItem={renderItem2}
           keyExtractor={(item) => item.alpha2Code}
         />
       )}
@@ -70,7 +139,7 @@ const styles = StyleSheet.create({
   },
   item: {
     flexDirection: "column",
-    height: 52,
+    height: "auto",
     backgroundColor: "#36213E",
     color: 'white',
     alignSelf: "stretch",
