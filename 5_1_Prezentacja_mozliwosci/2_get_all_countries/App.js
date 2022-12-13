@@ -88,7 +88,7 @@ export default function App() {
         <Text style={styles.title}>{item.name}</Text>
         <Text style={styles.title}>{item.capital}</Text>
         <Image
-            source={`https://www.worldometers.info/img/flags/${(item.alpha2Code).toLowerCase()}-flag.gif`}
+            source={{uri: `https://www.worldometers.info/img/flags/${(item.alpha2Code).toLowerCase()}-flag.gif`}}
             style={{width: 45, height:30}}
         />
         <Text>Nazwa w języku kraju</Text>
