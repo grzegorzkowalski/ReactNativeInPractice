@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {StatusBar, StyleSheet, Text, View} from "react-native";
+import {Button, StatusBar, StyleSheet, Text, View} from "react-native";
 import Name from "../components/Name";
 import ColorBoxes from "../components/ColorBoxes";
 import ShowDate from "../components/ShowDate";
@@ -7,7 +7,7 @@ import Map from "../components/Map";
 import DataTimer from "../components/DataTimer";
 import RandomNumberGenerator from "../components/RandomNumberGenerator";
 
-const HomePage = () => {
+const HomePage = ({route, navigation}) => {
     const [randomNumber, setRandomNumber] = useState(0);
 
     console.log("Witajcie studenci");
@@ -35,6 +35,7 @@ const HomePage = () => {
             <DataTimer />
             <RandomNumberGenerator updateApp={setRandomNumber}/>
             <Text>{randomNumber}</Text>
+            <Button title="Contact" onPress={() => navigation.navigate("Contact", {id: 76, update: randomNumber})} />
         </View>
     );
 };
@@ -45,6 +46,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
+        marginBottom: 50
     },
 });
 
